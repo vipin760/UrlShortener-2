@@ -7,13 +7,13 @@ const app = express()
 dotenv.config()
 dbConnect()
 app.use(cors({
-  origin:["http://localhost:4200"]
+  origin:"http://localhost:4200",
+  credentials: true
 }))
 
 import url_routes from "../src/routes/url.routes"
 
 app.use(express.json());
-
 app.use('/api/url',url_routes);
 
 app.listen(process.env.Port,()=>{
