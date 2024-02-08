@@ -39,6 +39,8 @@ router.get('/analytics',asyncHandler( async(req:Request,res:Response)=>{
                 analytics:urlData.visitHistory
             }
             res.status(200).send({data:urlAnalytics, message:"url anyalytics created successfully"})
+        }else{
+            res.status(401).send({data:"",message:"We cannot find the correspondence address you provided."})
         }
     } catch (error) {
         res.status(500).send({data:"",message:"internal server down"})
