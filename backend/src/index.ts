@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import { dbConnect } from './config/conf'
 import cors from 'cors'
 const app = express()
-
+const port = process.env.Port || 3000
 dotenv.config()
 dbConnect()
 app.use(cors({
@@ -16,6 +16,6 @@ import url_routes from "../src/routes/url.routes"
 app.use(express.json());
 app.use('/api/url',url_routes);
 
-app.listen(process.env.Port,()=>{
-  console.log(`running port ${process.env.Port}`);
+app.listen(port,()=>{
+  console.log(`running port ${port}`);
 })

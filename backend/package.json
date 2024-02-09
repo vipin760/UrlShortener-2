@@ -1,14 +1,16 @@
 {
   "name": "urlshortener",
   "version": "1.0.0",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "start": "cd src&& nodemon index.ts",
+    "start": "nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "lint": "tslint -c tslint.json src/**/*.ts",
-    "prepublish": "npm run build"
-  },
+    "prepublish": "npm run build",
+    "watch":"tsc -w",
+    "dev":"nodemon dist/index.js"
+  }, 
   "author": "",
   "license": "ISC",
   "description": "",
