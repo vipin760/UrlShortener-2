@@ -2,7 +2,7 @@
     "name":"urlshortener",
     "version": "1.0.0",
     "engines":{
-        "node":">kk=18 <21"
+        "node":">kk=18 <=20.10.0"
     },
     "scripts": {
         "start":"cd backend/built && node index.js",
