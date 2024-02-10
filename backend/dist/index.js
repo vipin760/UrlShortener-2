@@ -15,7 +15,7 @@ app.use((0, cors_1.default)({
     origin: "http://localhost:4200",
     credentials: true
 }));
-var url_routes_1 = __importDefault(require("./routes/url.routes"));
+var url_routes_1 = __importDefault(require("../src/routes/url.routes"));
 app.use(express_1.default.json());
 app.use('/api/url', url_routes_1.default);
 app.listen(port, function () {
