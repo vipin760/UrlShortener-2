@@ -57,7 +57,6 @@ router.get("/un-short",asyncHandler ( async(req:Request,res:Response)=>{
         const urlExist = await UrlModel.findOne({shortUrl:shortId});
         
         if(urlExist){
-            console.log(urlExist.redirectUrl,"yup");
             res.status(200).send({data:urlExist.redirectUrl,message:"fetch unshorten url"})
         }else{
             res.status(401).send({data:'',message:"could not find in our collections"})
@@ -82,25 +81,5 @@ router.get('/:id',asyncHandler (async(req:Request, res:Response)=>{
     }
 }))
 
-
-
-// router.get("/un-short",asyncHandler ( async(req:Request,res:Response)=>{
-//     try {
-//         console.log("working");
-        
-//         const url = req.query.id;
-//         console.log(url);
-//         const urlExist = await UrlModel.findOne({shortUrl:url});
-//         console.log(urlExist);
-        
-//         if(urlExist){
-//             res.status(200).send({data:urlExist.redirectUrl,message:"fetch unshorten url"})
-//         }else{
-//             res.status(401).send({data:'',message:"could not find in our collections"})
-//         }
-//     } catch (error) {
-//         res.status(500).send({data:"",message:"internal server down"})
-//     }
-// }))
 
 export default router
